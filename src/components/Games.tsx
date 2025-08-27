@@ -193,7 +193,7 @@ const Games = () => {
               backdropFilter: 'blur(10px)',
               minWidth: '140px'
             }}>
-              <Typography variant="h2" sx={{ color: '#f59e0b', fontWeight: 900, mb: 1, fontSize: { xs: '2.5rem', md: '3rem' } }}>4.2★</Typography>
+              <Typography variant="h2" sx={{ color: '#f59e0b', fontWeight: 900, mb: 1, fontSize: { xs: '2.5rem', md: '3rem' } }}>4.8★</Typography>
               <Typography variant="h6" sx={{ color: '#ffffff', fontWeight: 600, fontSize: { xs: '1rem', md: '1.1rem' } }}>Average Rating</Typography>
             </Box>
           </Box>
