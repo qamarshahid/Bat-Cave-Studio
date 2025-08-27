@@ -2,10 +2,18 @@ import { useState } from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, CardMedia, Button, Chip, IconButton } from '@mui/material';
 import { Play, Star, Download, Heart, Share2, TrendingUp, Zap, Award, ImageOff } from 'lucide-react';
 
+// Import images to let Vite handle the paths correctly
+import ambulanceImage from '/public/embulance.webp';
+import monsterImage from '/public/monster.webp';
+import firefighterImage from '/public/firefighter.webp';
+import topRoofImage from '/public/toproof.webp';
+import carDriftImage from '/public/cardrift.webp';
+import decorateRoomImage from '/public/decorateroom.webp';
+
 interface Game {
   title: string;
   description: string;
-  image?: string;
+  image?: string | { default: string }; // Updated to allow imported image assets
   rating: number | string;
   downloads: string;
   type: string;
@@ -23,7 +31,7 @@ const Games = () => {
     {
       title: "Rescue Ambulance Doctor Games",
       description: "Greetings and welcome to the Ambulance Rescue Doctor Games universe of ambulance games. Playing these games immerses players in the high-stakes world of emergency medical services while also being informative and fun. This emergency game features a city ambulance simulator game, rescue simulator games, doctor simulator games 3D, and hospital games offline simulator. Ambulance Rescue combines the best elements of open-world exploration in the ultimate ambulance game and doctor hospital games simulator offline with action-packed ambulance driving games like an emergency ambulance game simulator.",
-      image: "/embulance.webp",
+      image: ambulanceImage,
       rating: 3.9,
       downloads: "1M+",
       type: "Role Playing",
@@ -35,7 +43,7 @@ const Games = () => {
     {
       title: "Extreme Monster Truck 4x4 Game",
       description: "Experience the thrill of extreme monster truck driving with realistic 4x4 physics and challenging terrain. Navigate through tough obstacles and showcase your driving skills in this action-packed monster truck simulator.",
-      image: "/monster.webp",
+      image: monsterImage,
       rating: 3.2,
       downloads: "500K+",
       type: "Racing",
@@ -44,7 +52,7 @@ const Games = () => {
     {
       title: "US Firefighter Truck Rescue 3D",
       description: "Step into the boots of a heroic firefighter and drive emergency rescue trucks through challenging scenarios. Save lives, extinguish fires, and become the ultimate emergency responder in this realistic 3D firefighter simulation.",
-      image: "/firefighter.webp",
+      image: firefighterImage,
       rating: 3.6,
       downloads: "750K+",
       type: "Simulation",
@@ -54,7 +62,7 @@ const Games = () => {
     {
       title: "Going up Rooftop 3D Parkour",
       description: "Master the art of parkour in this thrilling 3D rooftop adventure. Jump, climb, and navigate through urban landscapes with realistic physics and stunning city environments.",
-      image: "/toproof.webp",
+      image: topRoofImage,
       rating: "New",
       downloads: "100K+",
       type: "Action",
@@ -64,7 +72,7 @@ const Games = () => {
     {
       title: "Car Drifting Game Car Driving",
       description: "Perfect your drifting skills in this realistic car driving simulator. Experience authentic physics, multiple car models, and challenging drift tracks that will test your driving abilities.",
-      image: "/cardrift.webp",
+      image: carDriftImage,
       rating: "New",
       downloads: "250K+",
       type: "Racing",
@@ -73,6 +81,7 @@ const Games = () => {
     {
       title: "Decorate House Design Games 3D",
       description: "Unleash your creativity in this immersive 3D house design and decoration game. Choose from thousands of furniture pieces, colors, and decorative items to create your dream home.",
+      image: decorateRoomImage,
       rating: "New",
       downloads: "300K+",
       type: "Casual",
@@ -313,7 +322,7 @@ const Games = () => {
                 <CardMedia
                   component="img"
                   height="180"
-                  image={game.image}
+                  image={typeof game.image === 'string' ? game.image : game.image}
                   alt={game.title}
                   sx={{ 
                     objectFit: 'cover',

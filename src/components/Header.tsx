@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme } from '@mui/material';
 import { Menu as MenuIcon, Zap } from 'lucide-react';
+import logoImage from '/public/d30f680e-ced0-40b6-9994-9ceb1ebb3ac1.jpeg';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,7 +46,7 @@ const Header = () => {
       <Box sx={{ p: 3, borderBottom: '1px solid rgba(148, 163, 184, 0.1)' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
           <img 
-            src="/d30f680e-ced0-40b6-9994-9ceb1ebb3ac1.jpeg" 
+            src={logoImage} 
             alt="Bat Cave Studio Logo" 
             style={{ width: 40, height: 40, borderRadius: '8px' }}
           />
@@ -115,7 +116,7 @@ const Header = () => {
             onClick={() => scrollToSection('home')}
             >
               <img 
-                src="/d30f680e-ced0-40b6-9994-9ceb1ebb3ac1.jpeg" 
+                src={logoImage} 
                 alt="Bat Cave Studio Logo" 
                 style={{ 
                   width: 36, 

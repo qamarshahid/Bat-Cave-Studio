@@ -1,5 +1,6 @@
 import { Box, Typography, Container, Grid, Link, Divider } from '@mui/material';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import logoImage from '/public/d30f680e-ced0-40b6-9994-9ceb1ebb3ac1.jpeg';
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <img 
-                src="/d30f680e-ced0-40b6-9994-9ceb1ebb3ac1.jpeg" 
+                src={logoImage} 
                 alt="Bat Cave Studio Logo" 
                 style={{ width: 32, height: 32, borderRadius: '4px' }}
               />
